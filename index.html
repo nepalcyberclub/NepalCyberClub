@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepal Cyber Club - Digital Learning Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Nepal Cyber Club</div>
+        <div class="nav-links">
+            <a href="#courses">Courses</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Future with Digital Learning</h1>
+            <p>Learn from industry experts with courses tailored for Nepali students</p>
+        </div>
+    </section>
+    <div class="success-notification" id="successNotification">
+        <span>✓ Payment Successful! Your transaction is under review.</span>
+        <button class="close-notification">&times;</button>
+    </div>
+
+
+    <div class="course-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="development">Development</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
+    </div>
+
+    <div class="course-grid" id="courses">
+        <!-- Development Courses -->
+        <div class="course-card" data-category="development">
+            <div class="course-image" style="background-image: url('wordpress.jpg')">
+                <div class="price-tag">NPR 1,000</div>
+            </div>
+            <div class="course-content">
+                <h3>WordPress Mastery</h3>
+                <p>Complete website development with WordPress</p>
+                <button class="btn">Enroll Now</button>
+            </div>
+        </div>
+
+        <div class="course-card" data-category="development">
+            <div class="course-image" style="background-image: url('Python.jpg')">
+                <div class="price-tag">NPR 1,000</div>
+            </div>
+            <div class="course-content">
+                <h3>Python Programming</h3>
+                <p>From basics to advanced Python development</p>
+                <button class="btn">Enroll Now</button>
+            </div>
+        </div>
+
+        <!-- AI Courses -->
+        <div class="course-card" data-category="ai">
+            <div class="course-image" style="background-image: url('generative-AI.png')">
+                <div class="price-tag">NPR 1,000</div>
+            </div>
+            <div class="course-content">
+                <h3>Generative AI Fundamentals</h3>
+                <p>Master AI content generation tools and techniques</p>
+                <button class="btn">Enroll Now</button>
+            </div>
+        </div>
+
+        <!-- Design Courses -->
+        <div class="course-card" data-category="design">
+            <div class="course-image" style="background-image: url('UX-design-courses.jpg')">
+                <div class="price-tag">NPR 1,000</div>
+            </div>
+            <div class="course-content">
+                <h3>UI/UX Design</h3>
+                <p>User experience design principles</p>
+                <button class="btn">Enroll Now</button>
+            </div>
+        </div>
+
+        <!-- Additional Courses -->
+        <div class="course-card" data-category="development">
+            <div class="course-image" style="background-image: url('laravel.png')">
+                <div class="price-tag">NPR 1,000</div>
+            </div>
+            <div class="course-content">
+                <h3>Laravel Framework</h3>
+                <p>PHP web development with Laravel</p>
+                <button class="btn">Enroll Now</button>
+            </div>
+        </div>
+
+        <div class="course-card" data-category="ai">
+            <div class="course-image" style="background-image: url('Python-Data-Science-Tutorial.jpg')">
+                <div class="price-tag">NPR 1,000</div>
+            </div>
+            <div class="course-content">
+                <h3>Python and Data Science</h3>
+                <p>Introduction to AI and ML concepts</p>
+                <button class="btn">Enroll Now</button>
+            </div>
+        </div>
+
+        <div class="course-card" data-category="design">
+            <div class="course-image" style="background-image: url('web\ design.png')">
+                <div class="price-tag">NPR 1,000</div>
+            </div>
+            <div class="course-content">
+                <h3>web Design</h3>
+                <p>Professional design techniques</p>
+                <button class="btn">Enroll Now</button>
+            </div>
+        </div>
+
+        <div class="course-card" data-category="development">
+            <div class="course-image" style="background-image: url('Flutter.png')">
+                <div class="price-tag">NPR 1,000</div>
+            </div>
+            <div class="course-content">
+                <h3>Flutter Development</h3>
+                <p>Cross-platform mobile development</p>
+                <button class="btn">Enroll Now</button>
+            </div>
+        </div>
+
+        <div class="course-card" data-category="development">
+            <div class="course-image" style="background-image: url('ethical-hacking.jpg')">
+                <div class="price-tag">NPR 1,000</div>
+            </div>
+            <div class="course-content">
+                <h3>Ethical Hacking</h3>
+                <p>Professional Ethical Hacking</p>
+
+                <button class="btn">Enroll Now</button>
+            </div>
+        </div>
+
+        <div class="course-card" data-category="design">
+            <div class="course-image" style="background-image: url('Digital-Marketing.jpg')">
+                <div class="price-tag">NPR 1,000</div>
+            </div>
+            <div class="course-content">
+                <h3>Digital Marketing</h3>
+                <p>Online marketing strategies</p>
+                <button class="btn">Enroll Now</button>
+            </div>
+        </div>
+    </div>
+    <div id="paymentModal" class="modal">
+        <div class="modal-content payment-content">
+            <span class="close">&times;</span>
+
+            <!-- Payment Method Selection -->
+            <div class="payment-step active" id="methodSelection">
+                <h2>Choose Payment Method</h2>
+                <div class="payment-methods">
+                    <div class="method-card" data-method="esewa">
+                        <img src="esewa-logo.png" alt="eSewa">
+                    </div>
+                    <div class="method-card" data-method="khalti">
+                        <img src="khalti-logo.png" alt="Khalti">
+                    </div>
+                    <div class="method-card" data-method="bank">
+                        <i class="fas fa-university"></i>
+                        <span>Bank Transfer</span>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <!-- QR Code Display -->
+            <div class="payment-step" id="qrDisplay">
+                <h2>Scan to Pay</h2>
+                <div class="qr-codes">
+                    <div class="qr-code" id="esewaQr">
+                        <img src="esewa-qr.jpg" alt="eSewa QR">
+                    </div>
+                    <div class="qr-code" id="khaltiQr">
+                        <img src="khalti-qr.jpg" alt="Khalti QR">
+                    </div>
+                    <div class="qr-code" id="bankQr">
+                        <div class="bank-details">
+                            <img src="bank.jpg" alt="bank QR">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Proof Upload -->
+                <div class="payment-proof">
+                    <h3>Upload Payment Proof</h3>
+                    <div class="upload-box">
+                        <input type="file" id="paymentProof" accept="image/*">
+                        <label for="paymentProof">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Click to upload screenshot</p>
+                        </label>
+                        <div class="preview-container"></div>
+                    </div>
+                </div>
+
+                <!-- Transaction ID Input -->
+                <div class="transaction-id">
+                    <input type="text" placeholder="Enter Transaction ID" id="transactionId">
+                </div>
+
+                <div class="payment-actions">
+                    <button class="btn back-btn">Back</button>
+                    <button class="btn confirm-btn">Confirm Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="whatsapp-cta">
+        <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">
+            Can't Find Your Desired Course?
+        </h3>
+        <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+            If you don't see the course you're looking for, 
+            message us directly on WhatsApp. Our educational Team will help you find or create 
+            the perfect learning path for your needs.
+        </p>
+        <a href="https://wa.me/9779800000000" class="whatsapp-button" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            Message Us on WhatsApp
+        </a>
+    </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/9779800000000" class="whatsapp-button" 
+    style="position: fixed; bottom: 30px; right: 30px; z-index: 1000; animation: pulse 2s infinite;" 
+    target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    </a>
+    <section class="reviews-section">
+        <div class="container">
+            <h2>User Reviews</h2>
+
+            <div class="review-container">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/100?img=1" alt="Ramesh">
+                        <div class="user-info">
+                            <h4>Ramesh Shrestha</h4>
+                            <p>Kathmandu, Student</p>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"This platform is amazing! Learned web development in 3 months. Courses are well-structured!"</p>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/100?img=2" alt="Sunita">
+                        <div class="user-info">
+                            <h4>सुनीता गुरुङ</h4>
+                            <p>पोखरा, व्यवसायी</p>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"धेरै राम्रो छ! Price पनि reasonable छ। आजै WordPress सिक्न सकें 😊"</p>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/100?img=3" alt="Bikash">
+                        <div class="user-info">
+                            <h4>Bikash Tamang</h4>
+                            <p>Lalitpur, IT Student</p>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"Ramro xa course, price anusar ramro xa, NCC team ekdamai supportive xa! Suru bata nai bujhna sajilo vayo 😃"</p>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card">
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/100?img=4" alt="Anita">
+                        <div class="user-info">
+                            <h4>Anita Shrestha</h4>
+                            <p>Biratnagar, Freelancer</p>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"Course content ramro cha, easy to understand cha. Price pani affordable cha. NCC team helps all the time!"</p>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card">
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/100?img=5" alt="Rajan">
+                        <div class="user-info">
+                            <h4>Rajan Rai</h4>
+                            <p>Pokhara, Developer</p>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"NCC courses are top-notch! Ramro support and price pani reasonable cha. Highly recommended!"</p>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="review-card">
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/100?img=6" alt="Sita">
+                        <div class="user-info">
+                            <h4>Sita Gurung</h4>
+                            <p>Butwal, Entrepreneur</p>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"Ramro xa sabai kura, course content clear cha, price anusar support pani excellent cha."</p>
+                    </div>
+                </div>
+
+                <!-- Review 7 -->
+                <div class="review-card">
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/100?img=7" alt="Deepak">
+                        <div class="user-info">
+                            <h4>Deepak Adhikari</h4>
+                            <p>Dhangadhi, Student</p>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"I'm impressed! Ramro xa course, price pani budget friendly cha, and NCC team is very supportive."</p>
+                    </div>
+                </div>
+
+                <!-- Review 8 -->
+                <div class="review-card">
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/100?img=8" alt="Mina">
+                        <div class="user-info">
+                            <h4>Mina Lama</h4>
+                            <p>Janakpur, Designer</p>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"NCC ko course ekdamai ramro cha, content clear cha, price pani hit xa, and team supportive cha always."</p>
+                    </div>
+                </div>
+
+                <!-- Review 9 -->
+                <div class="review-card">
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/100?img=9" alt="Prakash">
+                        <div class="user-info">
+                            <h4>Prakash Khadka</h4>
+                            <p>Bharatpur, Engineer</p>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"Course ko quality ramro cha, price anusar perfect cha. NCC team ko help le progress sajilo vayo."</p>
+                    </div>
+                </div>
+
+                <!-- Review 10 -->
+                <div class="review-card">
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/100?img=10" alt="Suman">
+                        <div class="user-info">
+                            <h4>Suman Thapa</h4>
+                            <p>Hetauda, Professional</p>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"Really satisfied with the course! Ramro content, ramro price, and the NCC team is supportive and friendly."</p>
+                    </div>
+                </div>
+
+                <!-- Review 11 -->
+                <div class="review-card">
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/100?img=11" alt="Gita">
+                        <div class="user-info">
+                            <h4>Gita Devi</h4>
+                            <p>Bhaktapur, Student</p>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"Course ko presentation ekdamai clear cha, price pani affordable cha, ra NCC team le sabai queries ma support garyo."</p>
+                    </div>
+                </div>
+
+                <!-- Review 12 -->
+                <div class="review-card">
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/100?img=12" alt="Manoj">
+                        <div class="user-info">
+                            <h4>Manoj Sharma</h4>
+                            <p>Chitwan, Freelancer</p>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"Mero anubhav NCC platform sanga ramro cha, course content excellent cha, price pani realistic cha, support exceptional cha!"</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Nepal Cyber Club</h2>
+            <div class="about-content">
+                <p>
+                    At <strong>Nepal Cyber Club</strong>, we believe that education is the cornerstone of progress and empowerment. 
+                    We are a forward-thinking organization dedicated to providing <strong>accessible, high-quality learning resources</strong> 
+                    to individuals from all walks of life. Our mission is to break down barriers to education and 
+                    empower everyone with the skills they need to thrive in the digital age.
+                </p>
+                <p>
+                    Whether you're a student, a professional, or someone looking to explore new opportunities, 
+                    we offer a wide range of courses and resources designed to meet your needs. From 
+                    <strong>web development</strong> and <strong>programming</strong> to <strong>AI</strong>, <strong>design</strong>, and <strong>digital marketing</strong>, 
+                    our curriculum is carefully crafted to help you achieve your goals.
+                </p>
+                <p>
+                    What sets us apart is our commitment to <strong>inclusivity</strong>. We strive to make education accessible to everyone, 
+                    regardless of their background or financial situation. Through affordable courses, free resources, and 
+                    community-driven initiatives, we aim to create a world where anyone can learn, grow, and succeed.
+                </p>
+                <p>
+                    Join us in our mission to transform lives through education. Together, we can build a brighter, 
+                    more knowledgeable future for all.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="scroll-top" id="scrollTop">
+    <i class="fas fa-arrow-up"></i>
+    </div>
+    <section id="faq" class="faq-section">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-grid">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I enroll in a course?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Click the "Enroll Now" button on any course card and follow the payment instructions. You'll get immediate access after successful payment.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What payment methods do you accept?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We accept all major payment methods including:
+                        <br>- Credit/Debit Cards
+                        <br>- eSewa
+                        <br>- Khalti
+                        <br>- Bank Transfer
+                    </p>
+                </div>
+            </div>
+
+            <!-- Add more FAQ items following the same pattern -->
+        </div>
+    </div>
+    </section>
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Our Office</h4>
+                        <p>Kathmandu, Nepal</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>businessking6767@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <h4>Phone</h4>
+                        <p>+977-9800000000</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="courseTitle"></h2>
+            <div class="syllabus-content" id="syllabusContent"></div>
+            <button class="btn buy-btn">Buy Now</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
